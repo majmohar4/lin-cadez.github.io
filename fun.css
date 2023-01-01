@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f1f1f1;
+}
+.loader {
+  border: 10px solid #222;
+  width: 80px;
+  height: 80px;
+  /* bringing to middle */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-top-color: transparent;
+  /* addding spin */
+  animation: spin 0.7s linear infinite;
+}
+/* i am stoping the animation for now */
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
