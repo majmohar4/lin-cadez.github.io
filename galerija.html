@@ -14,6 +14,70 @@
 
 <body>
 
+  <style>
+
+    
+/* Set the background color of the gallery container to black */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style the gallery images */
+.gallery-image {
+  width: 20%; /* Set the width of the images to be 20% of the container */
+  margin: 5px;
+  border: 2px solid green;
+}
+
+/* Style the loading screen */
+.loading-screen {
+  position: fixed; /* Position the loading screen in the center of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the gallery elements */
+.gallery-element {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  margin: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Add styles for when the gallery elements are hovered over */
+.gallery-element:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+  cursor: pointer;
+}
+  </style>
+
+  <div>
+    <div class="gallery-container">
+      <button class="gallery-element" onclick="window.open('antigona.html', '_blank');">Antigona zapiski</button>
+      <button class="gallery-element" onclick="window.open('fun.html', '_blank');">Rickroll redirect link</button>
+      <button class="gallery-element" onclick="window.open('index.html', '_blank');">Domov</button>
+      <button class="gallery-element" onclick="window.open('testi.html', '_blank');">Prihajajoči testi</button>
+      <button class="gallery-element" onclick="window.open('music.html', '_blank');">Music visualizer</button>
+      </div>
+      
+  </div>
     <div class="grid image-grid">
 
         <div class="grid-block">
