@@ -1,51 +1,91 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <style>
-    body {
-      background-image: url("bg.jpg");
-      font-family: Verdana;
-      font-size: 20px;
-      color: white;
-    }
-   button {
-    text-align: center;
-    position: absolute;
-    top: 30%;
-    font-size: 40px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color: black;
-    border-radius: 12px;
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spaces.tk</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-  button:hover {
-    background-color: #e6e6e6;
-  }
-   h1 {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    font-size: 40px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-    table {
-      font-size: 20px;
-      margin: 0 auto;
-    }
-  </style>
-  <title>Spaces</title>
 </head>
+
+</head>
+
 <body>
-  <h1>Imagine a welcome sign here.</h1>
-  <a href="https://spaces.tk/antigona" target="_blank" rel="noopener noreferrer">
-  <button><strong>Antigona zapiski</strong></button>
-</a>
+    <div class="loading-screen">
+        <div id="loading" class="text"></div>
+    </div>
+    
+
+    <script>
+        // Get the text element
+        const textElement = document.querySelector(".text");
+
+        // Create an array of hex characters
+        const hexCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G"];
+
+
+        // Set the text to be written
+        const text = "spaces.tk";
+
+        // Create an empty string to store the hex text
+        let hexText = "";
+
+        // Loop through each character in the text
+        for (let i = 0; i < text.length; i++) {
+            // Get a random hex character
+            const hexCharacter = hexCharacters[Math.floor(Math.random() * hexCharacters.length)];
+            // Add the character to the hex text
+            hexText += hexCharacter;
+        }
+
+        // Set the text of the text element to be the hex text
+        textElement.textContent = hexText;
+
+        // Create a counter to keep track of the number of correct characters
+        let correctCharacters = 0;
+
+        // Create a function to update the text
+        function updateText() {
+            // Get a random index from the hex text
+            const index = Math.floor(Math.random() * hexText.length);
+
+            // If the character at the index is not the correct character
+            if (hexText[index] !== text[index]) {
+                // Replace the character at the index with the correct character
+                hexText = hexText.substr(0, index) + text[index] + hexText.substr(index + 1);
+                // Increment the number of correct characters
+                correctCharacters++;
+                // Update the text of the text element
+                textElement.textContent = hexText;
+            }
+
+            // If the number of correct characters is equal to the length of the text
+            if (correctCharacters === text.length) {
+                // Clear the interval
+                clearInterval(interval);
+            }
+        }
+
+        // Set an interval to update the text every 50 milliseconds
+        const interval = setInterval(updateText, 20);
+    </script>
+<div class="content-container" style="display: none;">
+    <div class="gallery-container">
+        <button class="gallery-element" onclick="window.location.href='antigona.html'">Antigona zapiski</button>
+        <button class="gallery-element" onclick="window.location.href='fun.html'">Rickroll redirect link</button>
+        <button class="gallery-element" onclick="window.location.href='testi.html'">Prihajajoči testi</button>
+        <button class="gallery-element" onclick="window.location.href='galerija.html'">Galerija</button>
+    </div>
+
+
+    
+</div>
+
+
+</div>
+
 </body>
+
 </html>

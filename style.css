@@ -1,28 +1,99 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 15;
   box-sizing: border-box;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  border-start-end-radius: 10px;
+  border-start-start-radius: 10px;
 }
+
+
 body {
-  background: #f1f1f1;
+  background-color: black;
 }
-.loader {
-  border: 10px solid #222;
-  width: 80px;
-  height: 80px;
-  /* bringing to middle */
+
+.fullscreen {
   position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 100vw; 
+  height: 100vh; 
+}
+.center-text {
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%; 
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border-top-color: transparent;
-  /* addding spin */
-  animation: spin 0.7s linear infinite;
 }
-/* i am stoping the animation for now */
-@keyframes spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+
+/* Style the text */
+.text {
+  width: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  color: green;
+  font-family: monospace;
+  font-size: 6vmin;
+
+
 }
+
+/* Set the background color of the gallery container to black */
+.gallery-container {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style the gallery images */
+.gallery-image {
+  width: 20%; /* Set the width of the images to be 20% of the container */
+  margin: 5px;
+  border: 2px solid green;
+}
+
+/* Style the loading screen */
+.loading-screen {
+  position: fixed; /* Position the loading screen in the center of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the gallery elements */
+.gallery-element {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  margin: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Add styles for when the gallery elements are hovered over */
+.gallery-element:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
