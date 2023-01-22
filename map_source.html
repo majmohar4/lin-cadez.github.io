@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Zemljevid Cerkva</title>
-    <link rel="stylesheet" href="style.css">
+    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
         <script>
@@ -38,42 +37,11 @@
         
 </head>
 <body>
-    <div class="naslov">
-            <h1>Zemljevid slovenskih Župnij</h1>
-            <p>Vir: <a href="https://www.lampreht.com/index.php/sl/arhivski-dokumenti/seznam-zupnij.html">lampreht.com</a></p>
-    </div>
-            <div class="mapa"><div class="folium-map" id="map_fba7c16b7354bde0b2e4316589656bad" ></div></div>
-    <footer>
-        <p>Če želite uporabiti zemljevid na svoji spletni strani, lahko to sto je <a id="source-code-link" style="color: green; font-style: oblique;">tukaj</a> povezava do izvirne kode.</p>
+    
+    
+            <div class="folium-map" id="map_fba7c16b7354bde0b2e4316589656bad" ></div>
         
-    </footer>
 </body>
-<script>
-    var sourceCodeLink = document.getElementById("source-code-link");
-sourceCodeLink.addEventListener("click", function() {
-    var modal = document.createElement("div");
-    modal.id = "source-code-modal";
-    modal.innerHTML = `
-        <div id="source-code-modal-content">
-            <span class="close">&times;</span>
-            <pre>
-            <code>
-                &lt;iframe width="560" height="315" src="map_source.html" title="Zemljevi derkev v Sloveniji" frameborder="0"&gt;&lt;/iframe&gt;
-            </code>
-            </pre>
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    var closeButton = document.getElementsByClassName("close")[0];
-    closeButton.addEventListener("click", function() {
-        modal.style.display = "none";
-    });
-
-    modal.style.display = "block";
-});
-
-</script>
 <script>
     
     

@@ -103,3 +103,55 @@ body {
   margin-right: auto;
   width: 30%;
 }
+
+.naslov{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: green;
+  font-family: monospace;
+  font-size: 3vmin;
+}
+.mapa{
+  width: 90%;
+  height: 90%;  
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+#source-code-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* centers the modal on the screen */
+  width: 80%; /* adjust as desired */
+  height: 19%; /* adjust as desired */
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px #888888;
+  overflow: auto; /* enables scrollbars if content overflows */
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#source-code-modal-content {
+  padding: 10px;
+}
+
+body {
+  z-index: 0;
+}
