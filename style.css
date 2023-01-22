@@ -164,5 +164,6 @@ body {
   text-align: center;
   color: rgb(0, 140, 255);
   font-family: monospace;
-  font-size: 3vmin;
+  font-size: 1vmin;
+  margin-bottom: 22px;
 }
