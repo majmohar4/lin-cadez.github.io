@@ -14,6 +14,49 @@
 
 
 
+<style>
+    header{
+        height: 60px;
+        width: 100%;
+        background-color: #001233;
+        display: inline-flex;
+        flex-direction: row;
+        align-content: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    header .links{
+        height: 80px;
+        display: flex;
+        width: 50%;
+    }
+    header ul li{
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0rem 2rem;
+        text-decoration: none;
+    }
+    header ul li a{
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: #CAC0B3;
+
+    }
+    .link-button:hover{
+        background-color: #FF595A; 
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+        transition: 0.8s;
+        transform: scale(1.1);
+    }
+    body{
+        background-color: #001233;
+    }
+
+
+</style>
 
 
 <body>
@@ -76,14 +119,20 @@
         const interval = setInterval(updateText, 50);
     </script>
     
+
 <div class="content-container" style="display: none;">
     <div class="gallery-container">
-        <button class="gallery-element" onclick="window.open('antigona.html', '_blank');">Antigona zapiski</button>
-        <button class="gallery-element" onclick="window.open('fun.html', '_blank');">Rickroll redirect link</button>
-        <button class="gallery-element" onclick="window.open('testi.html', '_blank');">Prihajajoči testi</button>
-        <button class="gallery-element" onclick="window.open('map.html');">Zemljevid cerkev v SLO</button>
-        <button class="gallery-element" onclick="window.open('galerija.html', '_blank');">Galerija</button>
-        <button class="gallery-element" onclick="window.open('music.html', '_blank');">Music visualizer</button>
+        <header>
+
+            <ul class="links">
+                <li class="link-button"><a href="#">Antigona Zapiski</a></li>
+                <li class="link-button"><a href="#">Ricrol redirect</a></li>
+                <li class="link-button"><a href="#">Upcoming Testi</a></li>
+                <li class="link-button"><a href="#">Galerija</a></li>
+                <li class="link-button"><a href="#">Music Visualizer</a></li>
+            </ul>
+    
+        </header>
     </div>
 
 
