@@ -1,4 +1,6 @@
 * {
+  margin: 10;
+  padding: 15;
   box-sizing: border-box;
   border-end-end-radius: 10px;
   border-end-start-radius: 10px;
@@ -6,30 +8,35 @@
   border-start-start-radius: 10px;
 }
 
-.fullscreen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
+
+body {
+  background-color: black;
+  
 }
 
+.fullscreen {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 100vw; 
+  height: 100vh; 
+}
 .center-text {
   position: absolute;
   text-align: center;
   font-size: 2rem;
-  width: 100%;
+  width: 100%; 
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
 }
 
-
+/* Style the text */
 .text {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   text-align: center;
   color: green;
@@ -39,26 +46,24 @@
 
 }
 
-
+/* Set the background color of the gallery container to black */
 .gallery-container {
-  background-color: rgb(22, 22, 24);
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-
+/* Style the gallery images */
 .gallery-image {
-  width: 20%;
- 
+  width: 20%; /* Set the width of the images to be 20% of the container */
   margin: 5px;
   border: 2px solid green;
 }
 
-
+/* Style the loading screen */
 .loading-screen {
-  position: fixed;
- 
+  position: fixed; /* Position the loading screen in the center of the screen */
   top: 0;
   left: 0;
   width: 100%;
@@ -68,11 +73,13 @@
   align-items: center;
 }
 
-header {
-  background-color: #FF595A;
-
+.gallery-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
+/* Style the gallery elements */
 .gallery-element {
   background-color: green;
   color: white;
@@ -83,7 +90,7 @@ header {
   transition: all 0.2s ease;
 }
 
-
+/* Add styles for when the gallery elements are hovered over */
 .gallery-element:hover {
   transform: scale(1.05);
   opacity: 0.8;
@@ -97,7 +104,7 @@ header {
   width: 30%;
 }
 
-.naslov {
+.naslov{
   top: 0;
   bottom: 0;
   left: 0;
@@ -107,10 +114,9 @@ header {
   font-family: monospace;
   font-size: 3vmin;
 }
-
-.mapa {
+.mapa{
   width: 90%;
-  height: 90%;
+  height: 90%;  
   top: 0;
   bottom: 0;
   left: 0;
@@ -119,24 +125,19 @@ header {
   margin-top: 22px;
   margin-bottom: 22px;
 }
-
 #source-code-modal {
   display: none;
   position: fixed;
   z-index: 999;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
- 
-  width: 80%;
- 
-  height: 19%;
- 
+  transform: translate(-50%, -50%); /* centers the modal on the screen */
+  width: 80%; /* adjust as desired */
+  height: 19%; /* adjust as desired */
   background-color: white;
   border: 1px solid black;
   box-shadow: 10px 10px 5px #888888;
-  overflow: auto;
- 
+  overflow: auto; /* enables scrollbars if content overflows */
 }
 
 .close {
@@ -155,9 +156,9 @@ body {
   z-index: 0;
 }
 
-.spodaj {
+.spodaj{
   position: relative;
-  align-items: center;
+align-items: center;
   left: 0;
   right: 0;
   text-align: center;
@@ -166,5 +167,5 @@ body {
   font-size: 2.5vmin;
 
   padding-bottom: 10px;
-
+ 
 }
