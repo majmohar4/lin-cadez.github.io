@@ -1,16 +1,16 @@
 * {
-  margin: 10;
-  padding: 15;
   box-sizing: border-box;
-  border-end-end-radius: 10px;
-  border-end-start-radius: 10px;
-  border-start-end-radius: 10px;
-  border-start-start-radius: 10px;
+  border-end-end-radius: 13px;
+  border-end-start-radius: 13px;
+  border-start-end-radius: 13px;
+  border-start-start-radius: 13px;
+  font-family: 'Montserrat';
 }
 
 
 body {
-  background-color: black;
+  background-color: #001233;
+  font-family: 'Montserrat';
   
 }
 
@@ -39,7 +39,7 @@ body {
   align-items: center; 
   justify-content: center;
   text-align: center;
-  color: green;
+  color: #FF595A;
   font-family: monospace;
   font-size: 6vmin;
 
@@ -110,7 +110,7 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  color: green;
+  color: #FF595A;
   font-family: monospace;
   font-size: 3vmin;
 }
@@ -162,7 +162,7 @@ align-items: center;
   left: 0;
   right: 0;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #FF595A;
   font-family: monospace;
   font-size: 2.5vmin;
 
