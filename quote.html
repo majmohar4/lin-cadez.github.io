@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #quote {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        text-align: center;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body onload="generateQuote()">
+    <div id="quote"></div>
+
+    <script>
+      function generateQuote() {
+        let quoters = [
+          "Life is like a book, some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+          "The best way to predict your future is to create it.",
+          "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+          "Hardships often prepare ordinary people for an extraordinary destiny.",
+          "The only way to do great work is to love what you do."
+        ];
+
+        // Choose a random quote
+        let quote = quoters[Math.floor(Math.random() * quoters.length)];
+
+        // Generate random background and text colors
+        let backgroundColor = getRandomColor();
+        let textColor = getComplementaryColor(backgroundColor);
+
+        // Update the quote and colors on the page
+        document.querySelector("#quote").innerHTML = quote;
+        document.body.style.backgroundColor = backgroundColor;
+        document.querySelector("#quote").style.color = textColor;
+      }
+
+      function getRandomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+
+      function getComplementaryColor(color) {
+        let r, g, b;
+        let match = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/.exec(color);
+        if (match) {
+          r = 255 - match[1];
+          g = 255 - match[2];
+          b = 255 - match[3];
+        }
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+    </script>
+  </body>
+</html>
