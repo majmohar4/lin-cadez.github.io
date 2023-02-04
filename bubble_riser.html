@@ -115,6 +115,14 @@
         <i class="fa fa-pause"></i>
         PAUSE
       </button>
+      <button onclick="playVisualizer()">
+        <i class="fa fa-play"></i>
+        PLAY
+      </button>
+      <button onclick="refresh()">
+        <i class="fa fa-refresh"></i>
+        RESET
+      </button>
       <p>*Double click the center of the screen to bring them back.</p>
     </div>
   <div id="visualizer">
@@ -124,6 +132,10 @@
 
       function pauseVisualizer() {
         audioElement.pause();
+      }
+
+      function playVisualizer() {
+        audioElement.play();
       }
 
 
@@ -143,6 +155,7 @@
       }
 
       function hideControls() {
+        document.body.style.cursor = "none";
         var x = document.getElementsByClassName("input");
         if (x[0].style.display === "none") {
           x[0].style.display = "block";
@@ -153,6 +166,7 @@
       }
 
       function showControls() {
+        document.body.style.cursor = "auto";
         var x = document.getElementsByClassName("input");
         x[0].style.display = "block";
         document.exitFullscreen();
