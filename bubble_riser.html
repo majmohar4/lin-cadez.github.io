@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
     <style>
       body {
         background-color: rgb(61, 61, 61);
@@ -9,16 +12,15 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
         width: 500px;
         height: 500px;
+        transform: translate(-50%, -50%);
         border-radius: 50%;
         overflow: hidden;
       }
       #circle {
         position: absolute;
         top: 0;
-        background-image: "default.jpg";
         left: 0;
         bottom: 0;
         right: 0;
@@ -34,29 +36,87 @@
   </head>
   <body>
     
+    <style>
+
+      p{
+        font-size: 20px;
+        font: bold;
+        font-family: "Montserrat", sans-serif;  
+      }
+      .input {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        align-items: left;
+        color: aliceblue;
+      }
+    
+      .input > * {
+        padding: 5px;
+      }
+    
+      .file-input {
+        display: flex;
+        align-items: center;
+      }
+    
+      .file-input > * {
+        margin-right: 10px;
+      }
+
+      i{
+        font-size: 25px;
+      }
+
+      button{
+        background-color: #ffffff;
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 15px 32px;
+        text-align: center;
+        width: fit-content;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
     <div class="input">
-      <br>
-
-      <p style="color: aliceblue;">Choose audio first: <input type="file" id="audio-input" accept="audio/*"></p>
-
-      <p style="color: aliceblue;">Choose circle image: <input type="file" id="image-input" accept="image/*"></p>
-
-      <p style="color: aliceblue;">Choose background image: <input type="file" id="bg-image-input" accept="image/*"></p>
-
-
-      <p style="color: aliceblue;">Choose circle color: <input type="color" id="slider" name="slider" value="#e5e5e5"></p>
-
-      <p style="color: aliceblue;">Choose background color: <input type="color" id="bg-slider" name="slider" value="#3d3d3d"></p>
-
-
-
-      <button onclick="hideControls()">Hide controls</button>
-      <button onclick="fullscreen()">Full screen</button>
-
-      <button onclick="pauseVisualizer()">PAUSE</button>
-
-      <p style="color: aliceblue;">*Double click the center of the screen to bring them back.</p>
-  </div>
+      <div class="file-input">
+        <i class="fa fa-file-audio"></i>
+        <p>Choose audio first: <input type="file" id="audio-input" accept="audio/*"></p>
+      </div>
+      <div class="file-input">
+        <i class="fa fa-image"></i>
+        <p>Choose circle image: <input type="file" id="image-input" accept="image/*"></p>
+      </div>
+      <div class="file-input">
+        <i class="fa fa-image"></i>
+        <p>Choose background image: <input type="file" id="bg-image-input" accept="image/*"></p>
+      </div>
+      <div class="file-input">
+        <i class="fa fa-palette"></i>
+        <p>Choose circle color: <input type="color" id="slider" name="slider" value="#e5e5e5"></p>
+      </div>
+      <div class="file-input">
+        <i class="fa fa-palette"></i>
+        <p>Choose background color: <input type="color" id="bg-slider" name="slider" value="#3d3d3d"></p>
+      </div>
+      <button onclick="hideControls()">
+        <i class="fa fa-eye-slash"></i>
+        Hide controls
+      </button>
+      <button onclick="fullscreen()">
+        <i class="fa fa-expand"></i>
+        Full screen
+      </button>
+      <button onclick="pauseVisualizer()">
+        <i class="fa fa-pause"></i>
+        PAUSE
+      </button>
+      <p>*Double click the center of the screen to bring them back.</p>
+    </div>
   <div id="visualizer">
     <div id="circle"></div>
   </div>
