@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: rgb(61, 61, 61);
+      }
+      #visualizer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      #circle {
+        position: absolute;
+        top: 0;
+        background-image: "default.jpg";
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="input">
+      <br>
+
+      <p style="color: aliceblue;">Choose audio first: <input type="file" id="audio-input" accept="audio/*"></p>
+
+      <p style="color: aliceblue;">Choose circle image: <input type="file" id="image-input" accept="image/*"></p>
+
+      <p style="color: aliceblue;">Choose background image: <input type="file" id="bg-image-input" accept="image/*"></p>
+
+
+      <p style="color: aliceblue;">Choose circle color: <input type="color" id="slider" name="slider" value="#e5e5e5"></p>
+
+      <p style="color: aliceblue;">Choose background color: <input type="color" id="bg-slider" name="slider" value="#3d3d3d"></p>
+
+
+
+      <button onclick="hideControls()">Hide controls</button>
+      <button onclick="fullscreen()">Full screen</button>
+
+      <button onclick="pauseVisualizer()">PAUSE</button>
+
+      <p style="color: aliceblue;">*Double click the center of the screen to bring them back.</p>
+  </div>
+  <div id="visualizer">
+    <div id="circle"></div>
+  </div>
+    <script>
+
+      function pauseVisualizer() {
+        audioElement.pause();
+      }
+
+
+
+      document.body.addEventListener("dblclick", function() {
+        showControls();
+      });
+
+      function changeColor() {
+        var color = document.getElementById("slider").value;
+        document.getElementById("circle").style.backgroundColor = color;
+      }
+
+      function changeBGcolor() {
+        var bg_color = document.getElementById("bg-slider").value;
+        document.body.style.backgroundColor = bg_color;
+      }
+
+      function hideControls() {
+        var x = document.getElementsByClassName("input");
+        if (x[0].style.display === "none") {
+          x[0].style.display = "block";
+        } else {
+          x[0].style.display = "none";
+        }
+
+      }
+
+      function showControls() {
+        var x = document.getElementsByClassName("input");
+        x[0].style.display = "block";
+        document.exitFullscreen();
+      }
+
+      function fullscreen(){
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+          elem.msRequestFullscreen();
+        }
+      }
+
+      const slider = document.getElementById("slider");
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioElement = new Audio();
+      const audioSrc = audioContext.createMediaElementSource(audioElement);
+      const analyser = audioContext.createAnalyser();
+      
+      audioSrc.connect(analyser);
+      audioSrc.connect(audioContext.destination);
+      
+      const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+      
+      function renderFrame() {
+        changeColor();
+        changeBGcolor();
+        requestAnimationFrame(renderFrame);
+        analyser.getByteFrequencyData(frequencyData);
+        let sum = 0;
+        for (let i = 0; i < frequencyData.length; i++) {
+          sum += frequencyData[i];
+        }
+        const average = sum / frequencyData.length;
+        const scaleFactor = average / 256 ;
+        const maxHeight = window.innerHeight / 2;
+        const scale = 1 + scaleFactor * maxHeight / 500;
+        circle.style.transform = `scale(${scale})`;
+      }
+      
+      
+      const imageInput = document.getElementById("image-input");
+      const bgimageInput = document.getElementById("bg-image-input");
+      imageInput.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", function() {
+          changeImage(reader.result)
+        });
+        reader.readAsDataURL(imageInput.files[0]);
+      });
+      
+
+      bgimageInput.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", function() {
+          changebgimage(reader.result)
+        });
+        reader.readAsDataURL(bgimageInput.files[0]);
+      });
+
+      const audioInput = document.getElementById("audio-input");
+      audioInput.addEventListener("change", function() {
+        changeAudio(URL.createObjectURL(audioInput.files[0]));
+      });
+      
+      function changeImage(imageUrl) {
+        document.getElementById("circle").style.backgroundImage = `url(${imageUrl})`;
+      }
+
+      function changebgimage(imageUrl) {
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+      }
+      
+      function changeAudio(audioUrl) {
+        audioElement.src = audioUrl;
+        audioElement.play();
+        renderFrame();
+      }
+    </script>
+  </body>
+</html>
