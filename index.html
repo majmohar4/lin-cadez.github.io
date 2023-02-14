@@ -68,12 +68,12 @@
         }
 
         // Set an interval to update the text every 50 milliseconds
-        const interval = setInterval(updateText, 50);
+        const interval = setInterval(updateText, 20);
     </script>
     
 
 <div class="content-container" style="display: none;">
-    <div class="gallery-container">
+    <div>
         <header>
 
             <ul class="links">
@@ -84,9 +84,26 @@
             </ul>
     
         </header>
+        <div style="align-items: center; width: 100%;">
+
+            <h1>Statistic</h1>
+            <h2 id="visit-count"></h2>
+            <h2 id="last-visit"></h2>
+            <script>
+                    const visitCount = countVisits();
+                  document.getElementById('visit-count').textContent = `You have visited this website ${visitCount} times total.`;
+
+                  updateLastVisit();
+                    document.getElementById('last-visit').textContent = `Your last visit was on ${getLastVisit()}.`;
+        
+        
+            </script>
+        </div>  
     </div>
 
 </div>
+
+
 
 </body>
 

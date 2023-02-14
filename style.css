@@ -213,3 +213,29 @@ header ul li a{
 
 }
 
+h2{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
