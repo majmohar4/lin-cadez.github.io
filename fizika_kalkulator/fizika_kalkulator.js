@@ -5,45 +5,10 @@ let ocene_tabla = [];
 
 
 
-/*
-function dodaj_oceno(){
-    const grade_input = document.getElementById("grade_input");
-    var grade_display = document.createElement('grade_display');
-    var grade_display = document.createElement('povprecje');
-    const ocena = grade_input.value;
-    var row = grade_display.insertRow();
-    var ustno = row.insertCell(0);
-    ustno.innerHTML = ocena;
-    
-    switch (vrsta_ocene) {
-        case ustna:
-            var ustno = row.insertCell(0);
-            ustno.innerHTML = ocena;
-            break;
-        case pisna:
-            var pisno = row.insertCell(1);
-            pisno.innerHTML = ocena;
-            break;
-        case tabla:
-            var tabla = row.insertCell(2);
-            tabla.innerHTML = ocena;
-            break;
-    
-      }
-
-
-    grade_input.value = "";
-
-    
-    
-}
-*/
-
-
 function dodaj_oceno(){
     var grade_input = document.getElementById("grade_input");
     var grade_display = document.getElementById("grade_display");
-    const ocena = grade_input.value;
+    const ocena = parseInt(grade_input.value);
 
 
     if (ocena <6 && ocena >0 && ocena != ""){
@@ -120,4 +85,44 @@ function tabla_vnos(){
     vrsta_ocene=2;
 }
 
+function sumArrays(arr1, arr2, arr3) {
+    let sum = 0;
+  
+    for (let i = 0; i < arr1.length; i++) {
+      sum += arr1[i];
+    }
+  
+    for (let i = 0; i < arr2.length; i++) {
+      sum += arr2[i];
+    }
+  
+    for (let i = 0; i < arr3.length; i++) {
+      sum += arr3[i];
+    }
+  
+    return sum;
+  }
 
+
+function povprecje(){
+    let sestevek_ocen;
+    let sestevek_ocen_s_tockami = 0;
+    sestevek_ocen=sumArrays(ocene_pisne, ocene_tabla, ocene_ustne);
+    
+
+    for (i=0; i<ocene_pisne.length; i++){
+        sestevek_ocen_s_tockami+=ocene_pisne[i]*6;
+    }
+    for (i=0; i<ocene_ustne.length; i++){
+        sestevek_ocen_s_tockami+=ocene_ustne[i]*3;
+    }
+    for (i=0; i<ocene_tabla.length; i++){
+        sestevek_ocen_s_tockami+=ocene_tabla[i];
+    }
+    console.log(sestevek_ocen_s_tockami);
+    console.log(sestevek_ocen);
+    let final_izracun = sestevek_ocen_s_tockami/sestevek_ocen;
+    var povprecje_text=document.getElementById("povprecje");
+    povprecje_text.innerHTML=final_izracun;
+    
+}
