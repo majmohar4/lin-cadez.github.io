@@ -76,7 +76,7 @@ body {
 .gallery-container {
   background-color: black;
   display: flex;
-  justify-content: center;
+
 }
 
 /* Style the gallery elements */
@@ -184,7 +184,7 @@ header{
 header .links{
   height: 80px;
   display: flex;
-  
+  align-items: center;
   width: fit-content;
   width: 50%;
 }
