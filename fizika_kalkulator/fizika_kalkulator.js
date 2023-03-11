@@ -77,26 +77,33 @@ function prikazi_ocene(){
 
 function set_ocena_1(){
     ocena = 1;
+    dodaj_oceno();
+
 }
 
 function set_ocena_2(){
     ocena = 2;
+    dodaj_oceno();
 }
 
 function set_ocena_3(){
     ocena = 3;
+    dodaj_oceno();
 }
 
 function set_ocena_4(){
     ocena = 4;
+    dodaj_oceno();
 }
 
 function set_ocena_5(){
     ocena = 5;
+    dodaj_oceno();
 }
 
 function ustni_vnos(){
     vrsta_ocene=0;
+
 }
 function pisni_vnos(){
     vrsta_ocene=1;
@@ -147,3 +154,7 @@ function povprecje(){
     povprecje_text.innerHTML="   "+final_izracun;
     
 }
+
+function refreshPage() {
+    location.reload();
+  }
