@@ -105,9 +105,13 @@ function sumArrays(arr1, arr2, arr3) {
 
 
 function povprecje(){
-    let sestevek_ocen;
+    let sestevek_ocen = 0;
     let sestevek_ocen_s_tockami = 0;
-    sestevek_ocen=sumArrays(ocene_pisne, ocene_tabla, ocene_ustne);
+    sestevek_ocen+=ocene_pisne.length*6
+    sestevek_ocen+=ocene_tabla.length
+    sestevek_ocen+=ocene_ustne.length*3    
+    console.log(sestevek_ocen);
+
     
 
     for (i=0; i<ocene_pisne.length; i++){
@@ -122,7 +126,45 @@ function povprecje(){
     console.log(sestevek_ocen_s_tockami);
     console.log(sestevek_ocen);
     let final_izracun = sestevek_ocen_s_tockami/sestevek_ocen;
+    final_izracun=final_izracun.toFixed(2)
     var povprecje_text=document.getElementById("povprecje");
     povprecje_text.innerHTML=final_izracun;
+    
+}
+
+function reset(){
+    const grade_input = document.getElementById("grade_input");
+    var grade_display = document.createElement('grade_display');
+    const table = document.querySelector('table');    
+    //poišče najdaljši seznam
+    const numbers = [];
+    numbers.push(ocene_pisne.length);
+    numbers.push(ocene_ustne.length);
+    numbers.push(ocene_tabla.length);
+    let maxNumber = numbers[0];
+    for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > maxNumber) {
+        maxNumber = numbers[i];
+    }
+    }
+//izbrisi tabelo
+    for (let i = 0; i < maxNumber; i++) {
+        const numRows = table.rows.length;
+        if (numRows>1){
+            var row = table.deleteRow([1]);
+        } 
+        else{
+            break;
+        }
+    }
+    vrsta_ocene = 0;
+    ocene_pisne = [];
+    ocene_ustne = [];
+    ocene_tabla = [];
+    let sestevek_ocen = 0;
+    let sestevek_ocen_s_tockami = 0;
+
+    var povprecje_text=document.getElementById("povprecje");
+    povprecje_text.innerHTML="";
     
 }
