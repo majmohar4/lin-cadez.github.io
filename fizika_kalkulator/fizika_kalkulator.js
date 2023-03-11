@@ -132,7 +132,7 @@ function sumArrays(arr1, arr2, arr3) {
 
 
 function povprecje(){
-    let sestevek_ocen = 0 = 0;
+    let sestevek_ocen = 0;
     let sestevek_ocen_s_tockami = 0;
     sestevek_ocen = ocene_pisne.length*6 + ocene_ustne.length*3 + ocene_tabla.length;
     
