@@ -1,4 +1,5 @@
 let vrsta_ocene = 0;
+var ocena = 0;
 let ocene_pisne = [];
 let ocene_ustne = [];
 let ocene_tabla = [];
@@ -8,7 +9,7 @@ let ocene_tabla = [];
 function dodaj_oceno(){
     var grade_input = document.getElementById("grade_input");
     var grade_display = document.getElementById("grade_display");
-    const ocena = parseInt(grade_input.value);
+
 
 
     if (ocena <6 && ocena >0 && ocena != ""){
@@ -26,7 +27,7 @@ function dodaj_oceno(){
         }
     }
     prikazi_ocene();
-    grade_input.value = "";
+  
 
 
 
@@ -74,6 +75,25 @@ function prikazi_ocene(){
 }
 
 
+function set_ocena_1(){
+    ocena = 1;
+}
+
+function set_ocena_2(){
+    ocena = 2;
+}
+
+function set_ocena_3(){
+    ocena = 3;
+}
+
+function set_ocena_4(){
+    ocena = 4;
+}
+
+function set_ocena_5(){
+    ocena = 5;
+}
 
 function ustni_vnos(){
     vrsta_ocene=0;
@@ -105,9 +125,9 @@ function sumArrays(arr1, arr2, arr3) {
 
 
 function povprecje(){
-    let sestevek_ocen;
+    let sestevek_ocen = 0;
     let sestevek_ocen_s_tockami = 0;
-    sestevek_ocen=sumArrays(ocene_pisne, ocene_tabla, ocene_ustne);
+    sestevek_ocen = ocene_pisne.length*6 + ocene_ustne.length*3 + ocene_tabla.length;
     
 
     for (i=0; i<ocene_pisne.length; i++){
@@ -122,7 +142,8 @@ function povprecje(){
     console.log(sestevek_ocen_s_tockami);
     console.log(sestevek_ocen);
     let final_izracun = sestevek_ocen_s_tockami/sestevek_ocen;
+    final_izracun = Math.round(final_izracun * 100) / 100;
     var povprecje_text=document.getElementById("povprecje");
-    povprecje_text.innerHTML=final_izracun;
+    povprecje_text.innerHTML="   "+final_izracun;
     
 }
