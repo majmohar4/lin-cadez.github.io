@@ -7,43 +7,67 @@
     <title>Kalkulator ocen za fiziko</title>
     <link rel="stylesheet" href="fizika_kalkulator.css">
     <script src="fizika_kalkulator.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+
+
 
 </head>
 <body>
 
-
+<div class="fake-body">
     <h1>Kalkulator ocen za fiziko</h1> 
     <h2>Vnesi ocene ustnih spraševanj</h2>
+    <hr class="rounded">
 
     <div class="vnos-ocen">
         
-        <input type="number" id="grade_input" min="1" max="5">
-        <button onclick="dodaj_oceno()">Potrdi</button>
+        
+        <button class="ikone" onclick="set_ocena_1()"><span class="material-symbols-rounded">counter_1</span></button>
+        <button class="ikone" onclick="set_ocena_2()"><span class="material-symbols-rounded">counter_2</span></button>
+        <button class="ikone" onclick="set_ocena_3()"><span class="material-symbols-rounded">counter_3</span></button>
+        <button class="ikone" onclick="set_ocena_4()"><span class="material-symbols-rounded">counter_4</span></button>
+        <button class="ikone" onclick="set_ocena_5()" ><span class="material-symbols-rounded">counter_5</span></button>
+        
+
 
     </div>
 
     <div class="prikaz-ocen">
         <table id="grade_display">
-            <th><button id="ustne" onclick="ustni_vnos()">Ustne ocene</button></th>
-            <th><button id="pisne" onclick="pisni_vnos()">Pisne ocene</button></th>
-            <th><button id="tabla" onclick="tabla_vnos()">Naloge pred tablo</button></th>
+            <th><button class="gumbi_tabela" id="ustne" onclick="ustni_vnos()">Ustne ocene</button></th>
+            <th><button class="gumbi_tabela"  id="pisne" onclick="pisni_vnos()">Pisne ocene</button></th>
+            <th><button class="gumbi_tabela"  id="tabla" onclick="tabla_vnos()">Naloge pred tablo</button></th>
 
 
         </table>
-            <button onclick="povprecje()">Izračunaj povprecje</button>
-            <button onclick="reset()">reset</button>
-
+        <div class="prikaz-povprecja">
+            <div class="gumbek_povprecni_div">
+                <button id="gumbek_povprecje"onclick="povprecje()">Izračunaj povprečje<span id="delec" class="material-symbols-rounded">magic_button</span></button>
+            </div>
+            <div class="gumbek_povprecni_div"style="display: flex; flex-direction: row;">
+            <h2>Povprečje: </h2>
+            <h2 id="povprecje"></h2>
+        </div>
+        <div class="gumbek_povprecni_div">
+            <button id="gumbek_povprecje"onclick="refreshPage()"><h2>Resetiraj</h2><span id="reset" class="material-symbols-rounded">
+                restart_alt
+                </span></button>
+        </div>
+        </div>
+        
             
     </div>
         
     
 
-    <div class="prikaz-povprecja">
-        <hr class="rounded">
-        <h2>Povprečje: </h2>
-        <h2 id="povprecje"></h2>
-    </div>
 
+</div>
 
 </body>
 </html>
