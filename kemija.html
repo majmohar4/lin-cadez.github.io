@@ -120,5 +120,48 @@
 	</table>
 	<p>Vse molekulske vezi so šibke.</p>
     <p>Vsaka molekula vode tvori 4 vodikove vezi, kar je tudi razlog za njeno ANOMALIJO.</p>
+
+	
+
+	<h1>Molska masa in množina snovi</h1>
+	<table>
+		<tr>
+			<th>Naloga</th>
+			<th>Rešitev</th>
+		</tr>
+		<tr>
+			<td>1. Koliko molov je v 24 g Mg?</td>
+			<td><a href="#" onclick="toggleSolution('solution1')">[Prikaži rešitev]</a><span class="solution" id="solution1">0,988 mol</span></td>
+		</tr>
+		<tr>
+			<td>2. Koliko gramov KCl potrebujemo, da dobimo 0,5 molov KCl?</td>
+			<td><a href="#" onclick="toggleSolution('solution2')">[Prikaži rešitev]</a><span class="solution" id="solution2">37,3 g</span></td>
+		</tr>
+		<tr>
+			<td>3. Koliko molov je v 500 ml raztopine 0,2 M NaOH?</td>
+			<td><a href="#" onclick="toggleSolution('solution3')">[Prikaži rešitev]</a><span class="solution" id="solution3">0,1 mol</span></td>
+		</tr>
+		<tr>
+			<td>4. Koliko gramov Ca(NO3)2 potrebujemo, da dobimo 0,1 molov Ca(NO3)2?</td>
+			<td><a href="#" onclick="toggleSolution('solution4')">[Prikaži rešitev]</a><span class="solution" id="solution4">16,409 g</span></td>
+		</tr>
+		<tr>
+			<td>5. Koliko molov je v 2,5 g H2SO4?</td>
+			<td><a href="#" onclick="toggleSolution('solution5')">[Prikaži rešitev]</a><span class="solution" id="solution5">0,0255 mol</span></td>
+		</tr>
+	</table>
+	<script>
+		function toggleSolution(id) {
+			var solution = document.getElementById(id);
+			var link = solution.previousElementSibling;
+			if (solution.style.display === "none") {
+				solution.style.display = "inline";
+				link.innerHTML = "[Skrij rešitev]";
+			} else {
+				solution.style.display = "none";
+				link.innerHTML = "[Prikaži rešitev]";
+		}
+	}
+</script>
 </body>
 </html>
