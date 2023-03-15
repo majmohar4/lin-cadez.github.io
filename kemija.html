@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Table with Text</title>
+	<title>Kemija zapiski</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -391,7 +391,7 @@ Kalcit(CaCO3)</p>
 <div>
 <p>Kako se imenujejo vezi med gradbeniki kovinskih kristalov?</p>
 <button onclick="toggleAnswer('answer7')">Prikaži odgovor</button>
-<p id="answer7" style="display: none;">Metalne vezi.</p>
+<p id="answer7" style="display: none;">Kovinske vezi.</p>
 </div>
 <div>
 <p>Kako se imenujejo sile med gradbeniki molekularnih kristalov?</p>
@@ -400,7 +400,7 @@ Kalcit(CaCO3)</p>
 </div>
 <div>
 <script>
-	function toggleSolution(id) {
+	function toggleAnswer(id) {
 		var solution = document.getElementById(id);
 		var link = solution.previousElementSibling;
 		if (solution.style.display === "none") {
