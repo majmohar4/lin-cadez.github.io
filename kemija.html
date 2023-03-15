@@ -150,13 +150,94 @@
 			<td><a href="#" onclick="toggleSolution('solution5')">[Prikaži rešitev]</a><span class="solution" id="solution5">0,0255 mol</span></td>
 		</tr>
 	</table>
+    <h1>Tipi kristalov</h1>
+<table>
+  <tr>
+    <th>Tip kristala</th>
+    <th>Osnovni gradbeniki</th>
+    <th>Vezi med gradbeniki</th>
+    <th>Prevodnost</th>
+    <th>Tališče</th>
+    <th>Primeri</th>
+  </tr>
+  <tr>
+    <td>Kovalentni kristali</td>
+    <td>Atomi</td>
+    <td>Kovalentne vezi</td>
+    <td>Neprevodni</td>
+    <td>Visoka</td>
+    <td>Diamant, silicij</td>
+  </tr>
+  <tr>
+    <td>Ionski kristali</td>
+    <td>Kationi in anioni</td>
+    <td>Ionske vezi</td>
+    <td>Slabo prevodni v trdnem stanju, dobro prevodni v tekočem stanju ali raztopinah</td>
+    <td>Različno</td>
+    <td>Natrijev klorid, kalcijev fluorid</td>
+  </tr>
+  <tr>
+    <td>Kovinski kristali</td>
+    <td>Atomski jedri in elektroni</td>
+    <td>Metalne vezi</td>
+    <td>Dobro prevodni</td>
+    <td>Različno</td>
+    <td>Baker, železo</td>
+  </tr>
+  <tr>
+    <td>Molekularni kristali</td>
+    <td>Molekule</td>
+    <td>Van der Waalsove sile</td>
+    <td>Neprevodni</td>
+    <td>Nizka do srednja</td>
+    <td>Žveplo, jod</td>
+  </tr>
+</table>
+
+<h1>Pojasnilo za m, n, M, Mr, Ar in Avogadrovo število</h1>
+<table>
+  <tr>
+    <th>Simbol</th>
+    <th>Pojasnilo</th>
+    <th>Enote</th>
+  </tr>
+  <tr>
+    <td>m</td>
+    <td>Simbol za maso, ki se izraža v kilogramih (kg) ali gramih (g).<br> Masa je količina snovi, ki jo vsebuje telo.</td>
+    <td>kg, g</td>
+  </tr>
+  <tr>
+    <td>n</td>
+    <td>Simbol za količino snovi, ki se izraža v molih (mol).<br> Količina snovi je merilo za število molekul, atomov ali ionov v snovi.</td>
+    <td>mol</td>
+  </tr>
+  <tr>
+    <td>M</td>
+    <td>Simbol za molsko maso, ki se izraža v gramih na mol (g/mol).<br> Molska masa je masa ene molske enote snovi.</td>
+    <td>g/mol</td>
+  </tr>
+   <td>Mr</td>
+    <td>Simbol za relativno molekulsko maso, ki se izraža brez enote.<br> Relativna molekulska masa je razmerje molske mase snovi in molske mase ogljikovega izotopa C-12, ki se definira kot 12.</td>
+    <td>/</td>
+</tr>
+  <tr>
+    <td>Ar</td>
+    <td>Simbol za relativno atomsko maso, ki se izraža brez enote.<br> Relativna atomska masa je razmerje molske mase atoma in molske mase ogljikovega izotopa C-12, ki se definira kot 12.</td>
+   <td>/</td>
+</tr>
+  <tr>
+    <td>Avogadrovo število</td>
+    <td>Število delcev v enem molu snovi.<br> Izraža se kot 6,022 x 10<sup>23</sup> delcev na mol in se označuje kot N<sub>A</sub>.</td>
+  <td>/</td>
+</tr>
+</table>
 	<script>
 		function toggleSolution(id) {
 			var solution = document.getElementById(id);
 			var link = solution.previousElementSibling;
 			if (solution.style.display === "none") {
 				solution.style.display = "inline";
-				link.innerHTML = " [Skrij rešitev] ";
+				link.innerHTML = "[Skrij rešitev]";
 			} else {
 				solution.style.display = "none";
 				link.innerHTML = "[Prikaži rešitev]";
@@ -184,233 +265,6 @@ Vodikov cianid (HCN)
 Natrijev cianid (NaCN)
 Berilijev diklorid (BeCl2)
 Kalcit(CaCO3)</p>
-<title>Molska masa in množina snovi</title>
-<style>
-	body {
-		font-family: Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-	}
-	h1 {
-		text-align: center;
-		margin-top: 50px;
-		margin-bottom: 30px;
-	}
-	table {
-		margin: 0 auto;
-		border-collapse: collapse;
-		width: 80%;
-	}
-	th, td {
-		padding: 10px;
-		text-align: center;
-		border: 1px solid #ccc;
-	}
-	.solution {
-		display: none;
-	}
-</style>
-</head>
-<body>
-<h1>Molska masa in množina snovi</h1>
-<table>
-	<tr>
-		<th>Naloga</th>
-		<th>Rešitev</th>
-	</tr>
-	<tr>
-		<td>1. Koliko molov je v 24 g Mg?</td>
-		<td><a href="#" onclick="toggleSolution('solution1')">[Prikaži rešitev]</a><span class="solution" id="solution1">0,988 mol</span></td>
-	</tr>
-	<tr>
-		<td>2. Koliko gramov KCl potrebujemo, da dobimo 0,5 molov KCl?</td>
-		<td><a href="#" onclick="toggleSolution('solution2')">[Prikaži rešitev]</a><span class="solution" id="solution2">37,3 g</span></td>
-	</tr>
-	<tr>
-		<td>3. Koliko molov je v 500 ml raztopine 0,2 M NaOH?</td>
-		<td><a href="#" onclick="toggleSolution('solution3')">[Prikaži rešitev]</a><span class="solution" id="solution3">0,1 mol</span></td>
-	</tr>
-	<tr>
-		<td>4. Koliko gramov Ca(NO3)2 potrebujemo, da dobimo 0,1 molov Ca(NO3)2?</td>
-		<td><a href="#" onclick="toggleSolution('solution4')">[Prikaži rešitev]</a><span class="solution" id="solution4">16,409 g</span></td>
-	</tr>
-	<tr>
-		<td>5. Koliko molov je v 2,5 g H2SO4?</td>
-		<td><a href="#" onclick="toggleSolution('solution5')">[Prikaži rešitev]</a><span class="solution" id="solution5">0,0255 mol</span></td>
-	</tr>
-</table>
-<h1>Tipi kristalov</h1>
-<table>
-<tr>
-<th>Tip kristala</th>
-<th>Osnovni gradbeniki</th>
-<th>Vezi med gradbeniki</th>
-<th>Prevodnost</th>
-<th>Tališče</th>
-<th>Primeri</th>
-</tr>
-<tr>
-<td>Kovalentni kristali</td>
-<td>Atomi</td>
-<td>Kovalentne vezi</td>
-<td>Neprevodni</td>
-<td>Visoka</td>
-<td>Diamant, silicij</td>
-</tr>
-<tr>
-<td>Ionski kristali</td>
-<td>Kationi in anioni</td>
-<td>Ionske vezi</td>
-<td>Slabo prevodni v trdnem stanju, dobro prevodni v tekočem stanju ali raztopinah</td>
-<td>Različno</td>
-<td>Natrijev klorid, kalcijev fluorid</td>
-</tr>
-<tr>
-<td>Kovinski kristali</td>
-<td>Atomski jedri in elektroni</td>
-<td>Metalne vezi</td>
-<td>Dobro prevodni</td>
-<td>Različno</td>
-<td>Baker, železo</td>
-</tr>
-<tr>
-<td>Molekularni kristali</td>
-<td>Molekule</td>
-<td>Van der Waalsove sile</td>
-<td>Neprevodni</td>
-<td>Nizka do srednja</td>
-<td>Žveplo, jod</td>
-</tr>
-</table>
-<h1>Pojasnilo za m, n, M, Mr, Ar in Avogadrovo število</h1>
 
-<table>
-<tr>
-<th>Simbol</th>
-<th>Pojasnilo</th>
-<th>Enote</th>
-</tr>
-<tr>
-<td>m</td>
-<td>Simbol za maso, ki se izraža v kilogramih (kg) ali gramih (g).</td>
-<td>kg, g</td>
-</tr>
-<tr>
-<td>n</td>
-<td>Simbol za količino snovi, ki se izraža v molih (mol).</td>
-<td>mol</td>
-</tr>
-<tr>
-<td>M</td>
-<td>Simbol za molsko maso, ki se izraža v gramih na mol (g/mol).</td>
-<td>g/mol</td>
-</tr>
-<tr>
-<td>Mr</td>
-<td>Simbol za relativno molekulsko maso, ki se izraža brez enote.</td>
-<td>brez enote</td>
-</tr>
-<tr>
-<td>Ar</td>
-<td>Simbol za relativno atomsko maso, ki se izraža brez enote.</td>
-<td>brez enote</td>
-</tr>
-<tr>
-<td>Avogadrovo število</td>
-<td>Število delcev v enem molu snovi. Izraža se kot 6,022 x 10^23 delcev na mol in se označuje kot N<sub>A</sub>.</td>
-<td>delcev/mol</td>
-</tr>
-</table>
-<h1>Pojasnilo za m, n, M, Mr, Ar in Avogadrovo število</h1>
-<table>
-<tr>
-<th>Simbol</th>
-<th>Pojasnilo</th>
-<th>Enote</th>
-</tr>
-<tr>
-<td>m</td>
-<td>Simbol za maso, ki se izraža v kilogramih (kg) ali gramih (g).<br> Masa je količina snovi, ki jo vsebuje telo.</td>
-<td>kg, g</td>
-</tr>
-<tr>
-<td>n</td>
-<td>Simbol za količino snovi, ki se izraža v molih (mol).<br> Količina snovi je merilo za število molekul, atomov ali ionov v snovi.</td>
-<td>mol</td>
-</tr>
-<tr>
-<td>M</td>
-<td>Simbol za molsko maso, ki se izraža v gramih na mol (g/mol).<br> Molska masa je masa ene molske enote snovi.</td>
-<td>g/mol</td>
-</tr>
-<td>Mr</td>
-<td>Simbol za relativno molekulsko maso, ki se izraža brez enote.<br> Relativna molekulska masa je razmerje molske mase snovi in molske mase ogljikovega izotopa C-12, ki se definira kot 12.</td>
-<td>/</td>
-</tr>
-<tr>
-<td>Ar</td>
-<td>Simbol za relativno atomsko maso, ki se izraža brez enote.<br> Relativna atomska masa je razmerje molske mase atoma in molske mase ogljikovega izotopa C-12, ki se definira kot 12.</td>
-<td>/</td>
-</tr>
-<tr>
-<td>Avogadrovo število</td>
-<td>Število delcev v enem molu snovi.<br> Izraža se kot 6,022 x 10<sup>23</sup> delcev na mol in se označuje kot N<sub>A</sub>.</td>
-<td>/</td>
-</tr>
-</table>
-<div>
-<p>Kaj so osnovni gradbeniki kovalentnih kristalov?</p>
-<button onclick="toggleAnswer('answer1')">Prikaži odgovor</button>
-<p id="answer1" style="display: none;">Osnovni gradbeniki kovalentnih kristalov so atomi, ki tvorijo kovalentne vezi z drugimi atomi v kristalu.</p>
-</div>
-<div>
-<p>Kaj so osnovni gradbeniki ionskih kristalov?</p>
-<button onclick="toggleAnswer('answer2')">Prikaži odgovor</button>
-<p id="answer2" style="display: none;">Osnovni gradbeniki ionskih kristalov so kationi in anioni, ki tvorijo ionske vezi v kristalu.</p>
-</div>
-<div>
-<p>Kaj so osnovni gradbeniki kovinskih kristalov?</p>
-<button onclick="toggleAnswer('answer3')">Prikaži odgovor</button>
-<p id="answer3" style="display: none;">Osnovni gradbeniki kovinskih kristalov so atomi, ki tvorijo metalne vezi v kristalu.</p>
-</div>
-<div>
-<p>Kaj so osnovni gradbeniki molekularnih kristalov?</p>
-<button onclick="toggleAnswer('answer4')">Prikaži odgovor</button>
-<p id="answer4" style="display: none;">Osnovni gradbeniki molekularnih kristalov so molekule, ki tvorijo šibke van der Waalsove sile z drugimi molekulami v kristalu.</p>
-</div>
-<div>
-<p>Kako se imenujejo vezi med gradbeniki kovalentnih kristalov?</p>
-<button onclick="toggleAnswer('answer5')">Prikaži odgovor</button>
-<p id="answer5" style="display: none;">Kovalentne vezi.</p>
-</div>
-<div>
-<p>Kako se imenujejo vezi med gradbeniki ionskih kristalov?</p>
-<button onclick="toggleAnswer('answer6')">Prikaži odgovor</button>
-<p id="answer6" style="display: none;">Ionske vezi.</p>
-</div>
-<div>
-<p>Kako se imenujejo vezi med gradbeniki kovinskih kristalov?</p>
-<button onclick="toggleAnswer('answer7')">Prikaži odgovor</button>
-<p id="answer7" style="display: none;">Kovinske vezi.</p>
-</div>
-<div>
-<p>Kako se imenujejo sile med gradbeniki molekularnih kristalov?</p>
-<button onclick="toggleAnswer('answer8')">Prikaži odgovor</button>
-<p id="answer8" style="display: none;">Van der Waalsove sile.</p>
-</div>
-<div>
-<script>
-	function toggleAnswer(id) {
-		var solution = document.getElementById(id);
-		var link = solution.previousElementSibling;
-		if (solution.style.display === "none") {
-			solution.style.display = "inline";
-			link.innerHTML = "[Skrij rešitev]";
-		} else {
-			solution.style.display = "none";
-			link.innerHTML = "[Prikaži rešitev]";
-	}
-}
-</script>
 </body>
 </html>
