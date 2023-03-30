@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>spaces.tk</title>
-    <link rel="stylesheet" href="galerija.css">
-    <script src="script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spaces.tk</title>
+  <link rel="stylesheet" href="galerija.css">
+  <script src="script.js"></script>
 
 </head>
 
@@ -15,57 +15,57 @@
 <body>
 
   <style>
+    /* Set the background color of the gallery container to black */
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-    
-/* Set the background color of the gallery container to black */
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    /* Style the gallery images */
+    .gallery-image {
+      width: 20%;
+      /* Set the width of the images to be 20% of the container */
+      margin: 5px;
+      border: 2px solid green;
+    }
 
-/* Style the gallery images */
-.gallery-image {
-  width: 20%; /* Set the width of the images to be 20% of the container */
-  margin: 5px;
-  border: 2px solid green;
-}
+    /* Style the loading screen */
+    .loading-screen {
+      position: fixed;
+      /* Position the loading screen in the center of the screen */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-/* Style the loading screen */
-.loading-screen {
-  position: fixed; /* Position the loading screen in the center of the screen */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+    }
 
-.gallery-container {
-  display: flex;
-  justify-content: center;
-}
+    /* Style the gallery elements */
+    .gallery-element {
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: none;
+      margin: 10px;
+      transition: all 0.2s ease;
+    }
 
-/* Style the gallery elements */
-.gallery-element {
-  background-color: green;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: none;
-  margin: 10px;
-  transition: all 0.2s ease;
-}
-
-/* Add styles for when the gallery elements are hovered over */
-.gallery-element:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-  cursor: pointer;
-}
+    /* Add styles for when the gallery elements are hovered over */
+    .gallery-element:hover {
+      transform: scale(1.05);
+      opacity: 0.8;
+      cursor: pointer;
+    }
   </style>
 
   <div>
@@ -75,43 +75,43 @@
       <button class="gallery-element" onclick="window.open('index.html', '_blank');">Domov</button>
       <button class="gallery-element" onclick="window.open('testi.html', '_blank');">Prihajajoči testi</button>
       <button class="gallery-element" onclick="window.open('music.html', '_blank');">Music visualizer</button>
-      </div>
-      
-  </div>
-    <div class="grid image-grid">
+    </div>
 
-        <div class="grid-block">
-          <div class="tile">
-            <a class="tile-link" href="x.jpg">
-              <img class="tile-img tile-img1" src="x.jpg" alt="Image">
-            </a>
-          </div>
-        </div>
-      
-        <div class="grid-block">
-          <div class="tile">
-            <a class="tile-link" href="z.jpg">
-              <img class="tile-img tile-img2" src="z.jpg" alt="Image">
-            </a>
-          </div>
-        </div>
-      
-        <div class="grid-block">
-          <div class="tile">
-            <a class="tile-link" href="monalisa.png">
-              <img class="tile-img tile-img3" src="monalisa.png" alt="Image">
-            </a>
-          </div>
-        </div>
-      
-        <div class="grid-block">
-          <div class="tile">
-            <a class="tile-link" href="https://github.com/lin-cadez/discord-music-bot">
-              <img class="tile-img tile-img4" src="pres.jpg" alt="Image">
-            </a>
-          </div>
-        </div>
- <!--
+  </div>
+  <div class="grid image-grid">
+
+    <div class="grid-block">
+      <div class="tile">
+        <a class="tile-link" href="x.jpg">
+          <img class="tile-img tile-img1" src="x.jpg" alt="Image">
+        </a>
+      </div>
+    </div>
+
+    <div class="grid-block">
+      <div class="tile">
+        <a class="tile-link" href="z.jpg">
+          <img class="tile-img tile-img2" src="z.jpg" alt="Image">
+        </a>
+      </div>
+    </div>
+
+    <div class="grid-block">
+      <div class="tile">
+        <a class="tile-link" href="monalisa.png">
+          <img class="tile-img tile-img3" src="monalisa.png" alt="Image">
+        </a>
+      </div>
+    </div>
+
+    <div class="grid-block">
+      <div class="tile">
+        <a class="tile-link" href="https://github.com/lin-cadez/discord-music-bot">
+          <img class="tile-img tile-img4" src="pres.jpg" alt="Image">
+        </a>
+      </div>
+    </div>
+    <!--
         <div class="grid-block">
           <div class="tile">
             <a class="tile-link" href="#">
@@ -147,8 +147,9 @@
 
         </div>
       
-      --> 
-      </div>
+      -->
+  </div>
 
 </body>
+
 </html>
