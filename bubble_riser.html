@@ -1,258 +1,259 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<head>
+  <title>hm</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-    <style>
-      body {
-        background-color: rgb(61, 61, 61);
-      }
-      #visualizer {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 500px;
-        height: 500px;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        overflow: hidden;
-      }
-      #circle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        width: 50%;
-        height: 50%;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: center;
-      }
+  <style>
+    body {
+      background-color: rgb(61, 61, 61);
+    }
 
-    </style>
-  </head>
-  <body>
-    
-    <style>
+    #visualizer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      overflow: hidden;
+    }
 
-      p{
-        font-size: 20px;
-        font: bold;
-        font-family: "Montserrat", sans-serif;  
-      }
-      .input {
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-        align-items: left;
-        color: aliceblue;
-      }
-    
-      .input > * {
-        padding: 5px;
-      }
-    
-      .file-input {
-        display: flex;
-        align-items: center;
-      }
-    
-      .file-input > * {
-        margin-right: 10px;
-      }
+    #circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
 
-      i{
-        font-size: 25px;
-      }
+<body>
 
-      button{
-        background-color: #ffffff;
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 15px 32px;
-        text-align: center;
-        width: fit-content;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
-    <div class="input">
-      <div class="file-input">
-        <i class="fa fa-file-audio"></i>
-        <p>Choose audio first: <input type="file" id="audio-input" accept="audio/*"></p>
-      </div>
-      <div class="file-input">
-        <i class="fa fa-image"></i>
-        <p>Choose circle image: <input type="file" id="image-input" accept="image/*"></p>
-      </div>
-      <div class="file-input">
-        <i class="fa fa-image"></i>
-        <p>Choose background image: <input type="file" id="bg-image-input" accept="image/*"></p>
-      </div>
-      <div class="file-input">
-        <i class="fa fa-palette"></i>
-        <p>Choose circle color: <input type="color" id="slider" name="slider" value="#e5e5e5"></p>
-      </div>
-      <div class="file-input">
-        <i class="fa fa-palette"></i>
-        <p>Choose background color: <input type="color" id="bg-slider" name="slider" value="#3d3d3d"></p>
-      </div>
-      <button onclick="hideControls()">
-        <i class="fa fa-eye-slash"></i>
-        Hide controls
-      </button>
-      <button onclick="fullscreen()">
-        <i class="fa fa-expand"></i>
-        Full screen
-      </button>
-      <button onclick="pauseVisualizer()">
-        <i class="fa fa-pause"></i>
-        PAUSE
-      </button>
-      <button onclick="playVisualizer()">
-        <i class="fa fa-play"></i>
-        PLAY
-      </button>
-      <button onclick="refresh()">
-        <i class="fa fa-refresh"></i>
-        RESET
-      </button>
-      <p>*Double click the center of the screen to bring them back.</p>
+  <style>
+    p {
+      font-size: 20px;
+      font: bold;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      align-items: left;
+      color: aliceblue;
+    }
+
+    .input>* {
+      padding: 5px;
+    }
+
+    .file-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .file-input>* {
+      margin-right: 10px;
+    }
+
+    i {
+      font-size: 25px;
+    }
+
+    button {
+      background-color: #ffffff;
+      border: none;
+      color: rgb(0, 0, 0);
+      padding: 15px 32px;
+      text-align: center;
+      width: fit-content;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+  <div class="input">
+    <div class="file-input">
+      <i class="fa fa-file-audio"></i>
+      <p>Choose audio first: <input type="file" id="audio-input" accept="audio/*"></p>
     </div>
+    <div class="file-input">
+      <i class="fa fa-image"></i>
+      <p>Choose circle image: <input type="file" id="image-input" accept="image/*"></p>
+    </div>
+    <div class="file-input">
+      <i class="fa fa-image"></i>
+      <p>Choose background image: <input type="file" id="bg-image-input" accept="image/*"></p>
+    </div>
+    <div class="file-input">
+      <i class="fa fa-palette"></i>
+      <p>Choose circle color: <input type="color" id="slider" name="slider" value="#e5e5e5"></p>
+    </div>
+    <div class="file-input">
+      <i class="fa fa-palette"></i>
+      <p>Choose background color: <input type="color" id="bg-slider" name="slider" value="#3d3d3d"></p>
+    </div>
+    <button onclick="hideControls()">
+      <i class="fa fa-eye-slash"></i>
+      Hide controls
+    </button>
+    <button onclick="fullscreen()">
+      <i class="fa fa-expand"></i>
+      Full screen
+    </button>
+    <button onclick="pauseVisualizer()">
+      <i class="fa fa-pause"></i>
+      PAUSE
+    </button>
+    <button onclick="playVisualizer()">
+      <i class="fa fa-play"></i>
+      PLAY
+    </button>
+    <button onclick="refresh()">
+      <i class="fa fa-refresh"></i>
+      RESET
+    </button>
+    <p>*Double click the center of the screen to bring them back.</p>
+  </div>
   <div id="visualizer">
     <div id="circle"></div>
   </div>
-    <script>
+  <script>
 
-      function pauseVisualizer() {
-        audioElement.pause();
-      }
+    function pauseVisualizer() {
+      audioElement.pause();
+    }
 
-      function playVisualizer() {
-        audioElement.play();
-      }
+    function playVisualizer() {
+      audioElement.play();
+    }
 
+    document.body.addEventListener("dblclick", function () {
+      showControls();
+    });
 
+    function changeColor() {
+      var color = document.getElementById("slider").value;
+      document.getElementById("circle").style.backgroundColor = color;
+    }
 
-      document.body.addEventListener("dblclick", function() {
-        showControls();
-      });
+    function changeBGcolor() {
+      var bg_color = document.getElementById("bg-slider").value;
+      document.body.style.backgroundColor = bg_color;
+    }
 
-      function changeColor() {
-        var color = document.getElementById("slider").value;
-        document.getElementById("circle").style.backgroundColor = color;
-      }
-
-      function changeBGcolor() {
-        var bg_color = document.getElementById("bg-slider").value;
-        document.body.style.backgroundColor = bg_color;
-      }
-
-      function hideControls() {
-        document.body.style.cursor = "none";
-        var x = document.getElementsByClassName("input");
-        if (x[0].style.display === "none") {
-          x[0].style.display = "block";
-        } else {
-          x[0].style.display = "none";
-        }
-
-      }
-
-      function showControls() {
-        document.body.style.cursor = "auto";
-        var x = document.getElementsByClassName("input");
+    function hideControls() {
+      document.body.style.cursor = "none";
+      var x = document.getElementsByClassName("input");
+      if (x[0].style.display === "none") {
         x[0].style.display = "block";
-        document.exitFullscreen();
+      } else {
+        x[0].style.display = "none";
       }
+    }
 
-      function fullscreen(){
-        var elem = document.documentElement;
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-          elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-          elem.msRequestFullscreen();
-        }
-      }
+    function showControls() {
+      document.body.style.cursor = "auto";
+      var x = document.getElementsByClassName("input");
+      x[0].style.display = "block";
+      document.exitFullscreen();
+    }
 
-      const slider = document.getElementById("slider");
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const audioElement = new Audio();
-      const audioSrc = audioContext.createMediaElementSource(audioElement);
-      const analyser = audioContext.createAnalyser();
-      
-      audioSrc.connect(analyser);
-      audioSrc.connect(audioContext.destination);
-      
-      const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-      
-      function renderFrame() {
-        changeColor();
-        changeBGcolor();
-        requestAnimationFrame(renderFrame);
-        analyser.getByteFrequencyData(frequencyData);
-        let sum = 0;
-        for (let i = 0; i < frequencyData.length; i++) {
-          sum += frequencyData[i];
-        }
-        const average = sum / frequencyData.length;
-        const scaleFactor = average / 256 ;
-        const maxHeight = window.innerHeight / 2;
-        const scale = 1 + scaleFactor * maxHeight / 500;
-        circle.style.transform = `scale(${scale})`;
+    function fullscreen() {
+      var elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
       }
-      
-      
-      const imageInput = document.getElementById("image-input");
-      const bgimageInput = document.getElementById("bg-image-input");
-      imageInput.addEventListener("change", function() {
-        const reader = new FileReader();
-        reader.addEventListener("load", function() {
-          changeImage(reader.result)
-        });
-        reader.readAsDataURL(imageInput.files[0]);
+    }
+
+    const slider = document.getElementById("slider");
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const audioElement = new Audio();
+    const audioSrc = audioContext.createMediaElementSource(audioElement);
+    const analyser = audioContext.createAnalyser();
+
+    audioSrc.connect(analyser);
+    audioSrc.connect(audioContext.destination);
+
+    const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+    function renderFrame() {
+      changeColor();
+      changeBGcolor();
+      requestAnimationFrame(renderFrame);
+      analyser.getByteFrequencyData(frequencyData);
+      let sum = 0;
+      for (let i = 0; i < frequencyData.length; i++) {
+        sum += frequencyData[i];
+      }
+      const average = sum / frequencyData.length;
+      const scaleFactor = average / 256;
+      const maxHeight = window.innerHeight / 2;
+      const scale = 1 + scaleFactor * maxHeight / 500;
+      circle.style.transform = `scale(${scale})`;
+    }
+
+    const imageInput = document.getElementById("image-input");
+    const bgimageInput = document.getElementById("bg-image-input");
+    imageInput.addEventListener("change", function () {
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        changeImage(reader.result)
       });
-      
+      reader.readAsDataURL(imageInput.files[0]);
+    });
 
-      bgimageInput.addEventListener("change", function() {
-        const reader = new FileReader();
-        reader.addEventListener("load", function() {
-          changebgimage(reader.result)
-        });
-        reader.readAsDataURL(bgimageInput.files[0]);
+
+    bgimageInput.addEventListener("change", function () {
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        changebgimage(reader.result)
       });
+      reader.readAsDataURL(bgimageInput.files[0]);
+    });
 
-      const audioInput = document.getElementById("audio-input");
-      audioInput.addEventListener("change", function() {
-        changeAudio(URL.createObjectURL(audioInput.files[0]));
-      });
-      
-      function changeImage(imageUrl) {
-        document.getElementById("circle").style.backgroundImage = `url(${imageUrl})`;
-      }
+    const audioInput = document.getElementById("audio-input");
+    audioInput.addEventListener("change", function () {
+      changeAudio(URL.createObjectURL(audioInput.files[0]));
+    });
 
-      function changebgimage(imageUrl) {
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundImage = `url(${imageUrl})`;
-      }
-      
-      function changeAudio(audioUrl) {
-        audioElement.src = audioUrl;
-        audioElement.play();
-        renderFrame();
-      }
-    </script>
-  </body>
+    function changeImage(imageUrl) {
+      document.getElementById("circle").style.backgroundImage = `url(${imageUrl})`;
+    }
+
+    function changebgimage(imageUrl) {
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundAttachment = "fixed";
+      document.body.style.backgroundImage = `url(${imageUrl})`;
+    }
+
+    function changeAudio(audioUrl) {
+      audioElement.src = audioUrl;
+      audioElement.play();
+      renderFrame();
+    }
+  </script>
+</body>
+
 </html>
