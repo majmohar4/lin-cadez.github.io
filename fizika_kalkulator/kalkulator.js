@@ -94,13 +94,21 @@ function set_ocena_5() {
 
 function ustni_vnos() {
     vrsta_ocene = 0;
-
+    document.getElementById("ustne").style.backgroundColor = "rgb(0, 255, 0)";
+    document.getElementById("pisne").style.backgroundColor = "#e9efef00";
+    document.getElementById("tabla").style.backgroundColor = "#e9efef00";
 }
 function pisni_vnos() {
     vrsta_ocene = 1;
+    document.getElementById("pisne").style.backgroundColor = "rgb(0, 255, 0)";
+    document.getElementById("ustne").style.backgroundColor = "#e9efef00";
+    document.getElementById("tabla").style.backgroundColor = "#e9efef00";
 }
 function tabla_vnos() {
     vrsta_ocene = 2;
+    document.getElementById("tabla").style.backgroundColor = "rgb(0, 255, 0)";
+    document.getElementById("pisne").style.backgroundColor = "#e9efef00";
+    document.getElementById("ustne").style.backgroundColor = "#e9efef00";
 }
 
 function sumArrays(arr1, arr2, arr3) {
